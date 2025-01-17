@@ -2,7 +2,7 @@
 We are going to write a tiny engine or say a basic structure.
 
 game engine generally contains
-- Rendergin Engine
+- Rendering Engine
 - Input System
 - Physics Engine
 - Entity-Component System
@@ -16,7 +16,7 @@ game engine generally contains
 
 ![Steam Game Classification](SteamGameClassification.png)
 
-The game types that we are focusing on are Action, Role-Playing and Stimulation. More specifically, there is a (or more) character that the player gains control over to a certain extent, and there is a world where the character is placed, with various mechanics integrated to enrich the gameplay such as weapon, crafting, magic, destruction.
+The game types that we are focusing on are Action, Role-Playing and Simulation. More specifically, there is a (or more) character that the player gains control over to a certain extent, and there is a world where the character is placed, with various mechanics integrated to enrich the gameplay such as weapon, crafting, magic, destruction.
 
 ### Engine Layer Architecture
 
