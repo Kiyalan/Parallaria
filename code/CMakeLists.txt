@@ -7,7 +7,7 @@ project(
 
 add_executable(main main.cpp)
 
-# link opengl libraries
+# link opengl libraries (temporarily, after the abstraction is done, this part will be removed)
 add_subdirectory(opengl)
 target_link_libraries(main PRIVATE opengl)
 

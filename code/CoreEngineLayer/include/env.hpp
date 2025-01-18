@@ -8,7 +8,7 @@ using FInt = FInt32;
 
 using FReal32 = float;
 using FReal64 = double;
-using FReal = float;
+using FReal = FReal32;
 
 #include <string>
 using FString = std::string;
