@@ -1,5 +1,5 @@
 
-set(srcfile src/window/window.cpp)
+set(srcfile src/window/window.cpp src/graphic/graphic.cpp)
 
 add_library(coreengine STATIC ${srcfile})
 

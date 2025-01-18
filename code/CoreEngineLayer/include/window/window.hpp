@@ -1,5 +1,6 @@
 #include <GLFW/glfw3.h>
 #include <env.hpp>
+#include <graphic/graphic.hpp>
 
 #ifndef ENGINE_WINDOW_INCLUDED
 #define ENGINE_WINDOW_INCLUDED
@@ -22,12 +23,15 @@ struct WindowSetting {
     bool bAttracting = 0;
 };
 
-
 class Window {
 private:
     GLFWwindow* _windowHandle;
     WindowSetting _windowSetting;
     bool _bWindowInitialized;
+
+    // Bindings of input and graphic
+    friend void InputBindWindow(Window&);
+    friend void Graphic::GraphicBindWindow(Window&);
 public:
     Window(WindowSetting);
     ~Window();
@@ -36,11 +40,10 @@ public:
     void Destroy();
 
     // Reflect the user's click on the close button or the system close signal.
-    bool ShouldWindowBeClosed() const;
+    bool ShouldWindowClose() const;
 
     inline WindowSetting GetWindowSetting() const { return _windowSetting; };
     void SetWindowSetting(WindowSetting);
-    friend void InputBindWindow(Window);
 };
 
 }

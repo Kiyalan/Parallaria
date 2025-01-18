@@ -47,7 +47,7 @@ void Window::Destroy(){
     }
 }
 
-bool Window::ShouldWindowBeClosed() const {
+bool Window::ShouldWindowClose() const {
     if (!_bWindowInitialized) {
         // Throw a exception because the window hasn't been initialized
     }
