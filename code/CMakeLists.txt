@@ -6,6 +6,11 @@ project(
 )
 
 add_executable(main main.cpp)
+
 # link opengl libraries
 add_subdirectory(opengl)
 target_link_libraries(main PRIVATE opengl)
+
+# load Core Engine Layer
+add_subdirectory(CoreEngineLayer)
+target_link_libraries(main PRIVATE coreengine)
