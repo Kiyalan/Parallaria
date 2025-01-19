@@ -2,15 +2,11 @@
 #include <window/window.hpp>
 #include <graphic/graphic.hpp>
 #include <input/input.hpp>
-
-// void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-//     glViewport(0, 0, width, height);
-// }
+#include <timer/frame.hpp>
 
 int main() {
     if (!glfwInit())
         throw "Failed to start GLFW";
-
     Engine::WindowSetting windowSetting;
     windowSetting.displayState = Engine::EWindowDisplayState::Windowed;
     windowSetting.windowWidth = 1440;
@@ -22,19 +18,25 @@ int main() {
     graphic.GraphicBindWindow(window);
     if (!graphic.Initialize())
         throw "Graphic failed to initialized";
-
-    
-    glViewport(0, 0, 1440, 900);
-    // glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     Engine::Input::Init(window);
+
+    FReal64 previousTime = glfwGetTime();
+    FReal64 lagTime = .0;
     while (!window.ShouldWindowClose()) {
-        glfwPollEvents();
-        
+        FReal currentTime = glfwGetTime();
+        FReal elapsedTime = currentTime - previousTime;
+        previousTime = currentTime;
+        lagTime += elapsedTime;
+        while (lagTime >= Engine::Frame::secondsPerFrame) {
+            lagTime -= Engine::Frame::secondsPerFrame;
+            // process input and window event 
+            glfwPollEvents();
+            // update 
+        }
         graphic.Render();
     }
-
-    window.Destroy();
     
+    window.Destroy();
     glfwTerminate();
     return 0;
 }
