@@ -1,7 +1,7 @@
-#include <GLFW/glfw3.h>
-
 #ifndef ENGINE_GRAPHIC_INCLUDED
 #define ENGINE_GRAPHIC_INCLUDED
+
+#include <GLFW/glfw3.h>
 
 namespace Engine {
 

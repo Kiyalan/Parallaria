@@ -5,6 +5,9 @@ project(
     DESCRIPTION "A simple tiny duplicate of Terraria"
 )
 
+add_compile_options(-Wall -std=c++20)
+set(CMAKE_CXX_COMPILER g++)
+
 add_executable(main main.cpp)
 
 # link opengl libraries (temporarily, after the abstraction is done, this part will be removed)
