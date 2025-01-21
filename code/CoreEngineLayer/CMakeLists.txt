@@ -3,7 +3,9 @@ set(srcfile src/window/window.cpp
             src/graphic/graphic.cpp
             src/input/input.cpp
             src/utility.cpp
-            src/time/frame.cpp)
+            src/time/frame.cpp
+            src/resource/asset.cpp
+)
 
 add_library(coreengine STATIC ${srcfile})
 

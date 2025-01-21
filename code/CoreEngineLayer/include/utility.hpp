@@ -13,7 +13,15 @@ struct FRealVector2D {
 };
 
 #include <vector>
-template<class T>
-using FDynamicArray = std::vector<T>;
+template<class Type>
+using FDynamicArray = std::vector<Type>;
+
+#include <array>
+template<class Type, FUInt length>
+using FStaticArray = std::array<Type, length>;
+
+#include <unordered_map>
+template<class KeyType, class ValueType>
+using FHashTable = std::unordered_map<KeyType, ValueType>;
 
 #endif
