@@ -2,7 +2,7 @@
 #include <window/window.hpp>
 #include <graphic/graphic.hpp>
 #include <input/input.hpp>
-#include <timer/frame.hpp>
+#include <time/frame.hpp>
 
 int main() {
     if (!glfwInit())
@@ -23,8 +23,8 @@ int main() {
     FReal64 previousTime = glfwGetTime();
     FReal64 lagTime = .0;
     while (!window.ShouldWindowClose()) {
-        FReal currentTime = glfwGetTime();
-        FReal elapsedTime = currentTime - previousTime;
+        FReal64 currentTime = glfwGetTime();
+        FReal64 elapsedTime = currentTime - previousTime;
         previousTime = currentTime;
         lagTime += elapsedTime;
         while (lagTime >= Engine::Frame::secondsPerFrame) {

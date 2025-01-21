@@ -5,8 +5,14 @@ project(
     DESCRIPTION "A simple tiny duplicate of Terraria"
 )
 
-add_compile_options(-Wall -std=c++20)
-set(CMAKE_CXX_COMPILER g++)
+# Set C++ standard 20 and enable all compilation warnings
+set(CMAKE_CXX_STANDARD 20)
+add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-Wall>)
+add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-Wextra>)
+add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-Wpedantic>)
+add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-Wshadow>)
+add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-Wunused>)
+add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-Wuninitialized>)
 
 add_executable(main main.cpp)
 
