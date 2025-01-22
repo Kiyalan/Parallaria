@@ -7,7 +7,7 @@ namespace Engine {
 
 class Time {
 public:
-    static FReal64 GetCurrentTime(){
+    inline static FReal64 GetCurrentTime(){
         return glfwGetTime();
     }
 };

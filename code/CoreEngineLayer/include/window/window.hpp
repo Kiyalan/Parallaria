@@ -25,9 +25,9 @@ struct WindowSetting {
 
 class Window {
 private:
-    GLFWwindow* _windowHandle;
+    GLFWwindow* _windowHandle = nullptr;
     WindowSetting _windowSetting;
-    bool _bWindowInitialized;
+    bool _bWindowInitialized = 0;
 
     // Bindings of input and graphic
     friend void InputBindWindow(Window&);
