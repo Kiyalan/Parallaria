@@ -2,8 +2,8 @@
 set(srcfile src/utility.cpp
             src/window/window.cpp
             src/graphic/graphic.cpp
-            # src/graphic/shader.cpp
-            # src/graphic/renderable.cpp
+            src/graphic/shader.cpp
+            src/graphic/renderable.cpp
             src/input/input.cpp
             src/time/frame.cpp
             src/resource/asset.cpp

@@ -28,8 +28,9 @@ bool Window::Initialize(){
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, true);
     glfwWindowHint(GLFW_RESIZABLE, false);
     // Employ the max multi-sampling anti-aliasing
-    FInt maxSamples;
-    glGetIntegerv(GL_MAX_SAMPLES, &maxSamples);
+    FInt maxSamples = 8;
+    // To be fixed. Cannot call OpenGL functions before setting up the context
+    // glGetIntegerv(GL_MAX_SAMPLES, &maxSamples);
     glfwWindowHint(GLFW_SAMPLES, maxSamples);
     // Do not support multi-monitor 
     switch (static_cast<int>(_windowSetting.displayState)) {
