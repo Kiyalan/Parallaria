@@ -17,6 +17,10 @@ add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-Wuninitialized>)
 add_executable(main main.cpp)
 add_executable(patrickStar patrickstar.cpp)
 
+# load SDL
+include_directories(${CMAKE_SOURCE_DIR}/SDL/include)
+target_link_libraries(main PRIVATE ${CMAKE_SOURCE_DIR}/SDL/lib/SDL3/SDL3.a ${CMAKE_SOURCE_DIR}/SDL/lib/SDL3_mixer/SDL3_mixer.a)
+
 # load OpenGL library
 add_subdirectory(opengl)
 target_link_libraries(main PRIVATE opengl)
@@ -29,3 +33,6 @@ add_subdirectory(resloader)
 add_subdirectory(CoreEngineLayer)
 target_link_libraries(main PRIVATE coreEngine)
 target_link_libraries(patrickStar PRIVATE coreEngine)
+target_link_libraries(main PRIVATE coreEngine)
+
+#target_link_libraries(main PRIVATE SDL3 SDL3_mixer)

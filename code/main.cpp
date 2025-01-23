@@ -1,14 +1,16 @@
 #include <utility.hpp>
 #include <window/window.hpp>
+#include <resource/asset.hpp>
 #include <graphic/graphic.hpp>
 #include <input/input.hpp>
 #include <time/frame.hpp>
 #include <time/time.hpp>
 #include <graphic/renderable.hpp>
-#include <resource/assetmanager.hpp>
 #include <resource/imageasset.hpp>
+#include <resource/audioasset.hpp>
 
 int main() {
+    
     if (!glfwInit()) {
         PRINT_ERROR("GLFW initialization failed");
         throw std::exception();
@@ -57,7 +59,8 @@ int main() {
         }
         graphic.Render();
     }
-
+    
+    Engine::AudioManager::Initialize();
     window.Destroy();
     glfwTerminate();
     return 0;

@@ -4,6 +4,7 @@
 
 namespace Engine {
 
+
 class Asset {
 protected:
     /*
@@ -25,9 +26,10 @@ public:
 
 enum class EAssetType {
     Image,
-    Audio
+    Music,
+    Sound
 };
 
 }
-
 #endif
+

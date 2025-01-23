@@ -1,6 +1,7 @@
 #include <filesystem>
 #include <resource/assetmanager.hpp>
 #include <resource/imageasset.hpp>
+#include <resource/audioasset.hpp>
 #include <utility.hpp>
 
 namespace Engine {
@@ -23,8 +24,11 @@ FSharedPointer<const Asset> AssetManager::RequestAsset(EAssetType type, FString 
         case EAssetType::Image:
             _assetTable[path] = FSharedPointer<Asset>(new ImageAsset);
             break;
-        case EAssetType::Audio:
-            PRINT_ERROR("Audio resource not supported for now.");
+        case EAssetType::Sound:
+            _assetTable[path] = FSharedPointer<Asset>(new Sound);
+            break;
+        case EAssetType::Music:
+            _assetTable[path] = FSharedPointer<Asset>(new Music);
             break;
     }
     if (_assetTable[path] == nullptr) {

@@ -8,7 +8,7 @@ class Asset;
 enum class EAssetType;
 
 class AssetManager {
-private:
+protected:
     static FHashTable<FString, FSharedPointer<Asset> > _assetTable;
 public:
     /*

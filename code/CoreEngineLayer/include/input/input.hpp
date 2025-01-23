@@ -8,6 +8,7 @@
 #include <GLFW/glfw3.h>
 #include <env.hpp>
 #include <window/window.hpp>
+#include <utility.hpp>
 
 namespace Engine {
 
@@ -60,7 +61,7 @@ private:
     static bool _bInitialized;
     static GLFWwindow* _window;
     static std::unordered_map<EKey, FReal64> KeyPressTimesMap;
-    static std::vector<KeyCallback> KeyCallbacksVector;
+    static FDynamicArray<KeyCallback> KeyCallbacksVector;
     friend void InputBindWindow(Window& window);
     friend void CallTriger(GLFWwindow* window, int key, int scancode, int action, int mods);
     friend void KeyPressTimeCounter(EKey key, EAction action, EModifier mods);
