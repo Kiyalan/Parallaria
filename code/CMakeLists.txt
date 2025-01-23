@@ -15,12 +15,12 @@ add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-Wunused>)
 add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-Wuninitialized>)
 
 add_executable(main main.cpp)
-# add_executable(patrickStar patrickstar.cpp)
+add_executable(patrickStar patrickstar.cpp)
 
 # load OpenGL library
 add_subdirectory(opengl)
 target_link_libraries(main PRIVATE opengl)
-# target_link_libraries(patrickStar PRIVATE opengl)
+target_link_libraries(patrickStar PRIVATE opengl)
 
 # load resourLoader library
 add_subdirectory(resloader)
@@ -28,4 +28,4 @@ add_subdirectory(resloader)
 # load Core Engine Layer
 add_subdirectory(CoreEngineLayer)
 target_link_libraries(main PRIVATE coreEngine)
-# target_link_libraries(patrickStar PRIVATE coreEngine)
+target_link_libraries(patrickStar PRIVATE coreEngine)
