@@ -32,7 +32,7 @@ int main() {
     Engine::Input::Init(window);
 
     FSharedPointer<Engine::RenderableImage2D> patrick {new Engine::RenderableImage2D};
-    patrick->SetImageAsset("patrickstar.jpg");
+    patrick->SetImageAsset("PatrickStar.jpg");
     patrick->SetShader(graphic.GetDefaultImageShader());
     FStaticArray<FReal, 20> ver {
          0.35f,  0.5f, 0.0f, 1.0f, 0.0f,

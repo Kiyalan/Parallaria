@@ -7,7 +7,7 @@
 namespace Engine {
 
 // This default value is current working directory
-FString AssetManager::assetFolder {"resource/"};
+FString AssetManager::assetFolder {"Engine/Resource/"};
 FString AssetManager::projectFolder {"project folder unitialized"};
 
 FHashTable<FString, FSharedPointer<Asset> > AssetManager::_assetTable;

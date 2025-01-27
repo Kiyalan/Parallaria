@@ -28,15 +28,15 @@ bool Graphic::Initialize(){
     }
     // Initialize default image and polygon shader
     _defaultImageShader = FSharedPointer<Shader>(new Shader);
-    if (!(_defaultImageShader->LoadShaderSource(EShaderType::VertexShader, AssetManager::projectFolder + "code/CoreEngineLayer/src/graphic/image.vert")
-        && _defaultImageShader->LoadShaderSource(EShaderType::FragmentShader, AssetManager::projectFolder + "code/CoreEngineLayer/src/graphic/image.frag")
+    if (!(_defaultImageShader->LoadShaderSource(EShaderType::VertexShader, AssetManager::projectFolder + "Engine/Source/Runtime/Core/src/graphic/image.vert")
+        && _defaultImageShader->LoadShaderSource(EShaderType::FragmentShader, AssetManager::projectFolder + "Engine/Source/Runtime/Core/src/graphic/image.frag")
         && _defaultImageShader->Initialize())) {
         PRINT_ERROR("Graphic default image shader initialization failed.");
         return 0;
     }
     _defaultPolygonShader = FSharedPointer<Shader>(new Shader);
-    if (!(_defaultPolygonShader->LoadShaderSource(EShaderType::VertexShader, AssetManager::projectFolder + "code/CoreEngineLayer/src/graphic/polygon.vert")
-        && _defaultPolygonShader->LoadShaderSource(EShaderType::FragmentShader, AssetManager::projectFolder + "code/CoreEngineLayer/src/graphic/polygon.frag")
+    if (!(_defaultPolygonShader->LoadShaderSource(EShaderType::VertexShader, AssetManager::projectFolder + "Engine/Source/Runtime/Core/src/graphic/polygon.vert")
+        && _defaultPolygonShader->LoadShaderSource(EShaderType::FragmentShader, AssetManager::projectFolder + "Engine/Source/Runtime/Core/src/graphic/polygon.frag")
         && _defaultPolygonShader->Initialize())) {
         PRINT_ERROR("Graphic default polygon shader initialization failed.");
         return 0;
