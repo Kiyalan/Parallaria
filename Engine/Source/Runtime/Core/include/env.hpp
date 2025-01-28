@@ -2,11 +2,16 @@
 #ifndef ENGINE_ENV_INCLUDED
 #define ENGINE_ENV_INCLUDED
 
-using FInt32 = int;
-using FInt64 = long long;
+#include <cstdint>
+
+using FInt8 = int8_t;
+using FInt32 = int32_t;
+using FInt64 = int64_t;
 using FInt = FInt32;
-using FUInt32 = unsigned int;
-using FUInt64 = unsigned long long;
+
+using FUInt8 = uint8_t;
+using FUInt32 = uint32_t;
+using FUInt64 = uint64_t;
 using FUInt = FUInt32;
 
 using FReal32 = float;

@@ -21,6 +21,7 @@ add_executable(PatrickStar patrickstar.cpp)
 # Add subdirectories
 add_subdirectory(Source/ThirdParty)
 add_subdirectory(Source/Runtime/Core)
+add_subdirectory(Source/Runtime/Resource)
 
 # link test executables with Core Layer
 target_link_libraries(Main PRIVATE CoreLayer)

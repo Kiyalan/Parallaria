@@ -75,4 +75,8 @@ using FHashTable = std::unordered_map<KeyType, ValueType>;
 template<typename Type>
 using FSharedPointer = std::shared_ptr<Type>;
 
+#include <utility>
+template<typename Type1, typename Type2>
+using FPair = std::pair<Type1, Type2>;
+
 #endif

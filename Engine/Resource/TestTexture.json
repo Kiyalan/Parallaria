@@ -1,0 +1,27 @@
+{
+    "GUID": "a63d7f4cebe09a0f3aae6f0d5b5f8fa76f84d6f6",
+    "Type": "Texture",
+    "Data": {
+        "Width": 2,
+        "Height": 2,
+        "Channels": "RGBA",
+        "Pixels": [
+            255,
+            255,
+            255,
+            255,
+            0,
+            0,
+            255,
+            255,
+            0,
+            255,
+            0,
+            255,
+            255,
+            0,
+            0,
+            255
+        ]
+    }
+}
