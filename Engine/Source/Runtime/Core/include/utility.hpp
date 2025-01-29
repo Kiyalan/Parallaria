@@ -24,14 +24,20 @@ inline void _printError(T&& first, Args&&... args){
 #ifdef ENGINE_DEBUG_ON // common log
     #define PRINT_LOG(...) _printLog(__VA_ARGS__)
 #else
-    #define PRINT_LOG(...) 666
+    #define PRINT_LOG(...) ((void)0)
 #endif
 #ifdef ENGINE_RUNTIME_DEBUG_ON
     #define PRINT_RUNTIME_LOG(...) _printLog(__VA_ARGS__)
 #else
-    #define PRINT_RUNTIME_LOG(...) 777
+    #define PRINT_RUNTIME_LOG(...) ((void)0)
 #endif
 
+#include <cassert>
+#ifdef ENGINE_DEBUG_ON
+    #define ASSERT(x) assert(x)
+#else
+    #define ASSERT(x) ((void)0)
+#endif
 
 // use FReal64
 struct FRealVector2D { 

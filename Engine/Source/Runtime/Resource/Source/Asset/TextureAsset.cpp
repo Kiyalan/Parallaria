@@ -1,4 +1,4 @@
-#include <Asset/TextureAsset.hpp>
+#include <Resource/Asset/TextureAsset.hpp>
 #include <rapidjson/document.h>
 #include <utility.hpp>
 namespace Engine {

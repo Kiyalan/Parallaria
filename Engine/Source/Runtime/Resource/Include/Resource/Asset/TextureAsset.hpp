@@ -1,7 +1,7 @@
 #ifndef ENGINE_TEXTURE_ASSET_INCLUDED
 #define ENGINE_TEXTURE_ASSET_INCLUDED
 #include <utility.hpp>
-#include <Asset/Asset.hpp>
+#include <Resource/Asset/Asset.hpp>
 namespace Engine {
 class AssetManager;
 class TextureAsset {
