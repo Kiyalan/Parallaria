@@ -16,7 +16,7 @@ inline void _printError(){std::cerr << std::endl;}
 template <typename T, typename... Args>
 inline void _printError(T&& first, Args&&... args){
     std::cerr << first << " ";
-    _printLog(std::forward<Args>(args)...);
+    _printError(std::forward<Args>(args)...);
 }
 #define PRINT_ERROR(...) _printError(__VA_ARGS__)
 #ifdef ENGINE_DEBUG_ON // common log

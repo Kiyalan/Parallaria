@@ -10,6 +10,7 @@ set(srcfile src/utility.cpp
             src/resource/assetmanager.cpp
             src/resource/imageasset.cpp
             src/resource/audioasset.cpp
+            "src/Development/Assert/Assert.cpp"
 )
 
 add_library(CoreLayer STATIC ${srcfile})
