@@ -14,6 +14,9 @@ add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-Wshadow>)
 add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-Wunused>)
 add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-Wuninitialized>)
 
+# Integrate with IDE intellisense
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON) 
+
 # Add subdirectories
 add_subdirectory(Source/ThirdParty)
 add_subdirectory(Source/Runtime/Core)
@@ -23,6 +26,7 @@ add_subdirectory(Source/Runtime/Function)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 target_compile_definitions(CoreLayer PRIVATE ENGINE_FOLDER="${CMAKE_CURRENT_SOURCE_DIR}")
 target_compile_definitions(ResourceLayer PRIVATE ENGINE_FOLDER="${CMAKE_CURRENT_SOURCE_DIR}")
+target_compile_definitions(FunctionLayer PRIVATE ENGINE_FOLDER="${CMAKE_CURRENT_SOURCE_DIR}")
 
 # Add executables
 add_executable(Main main.cpp)

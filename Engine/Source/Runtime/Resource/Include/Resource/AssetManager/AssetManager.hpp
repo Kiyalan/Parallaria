@@ -1,27 +1,29 @@
 #ifndef ENGINE_ASSET_MANAGER_INCLUDED
 #define ENGINE_ASSET_MANAGER_INCLUDED
 
-#include <utility.hpp>
+#include <memory>
+#include <unordered_map>
+#include <string>
+#include <filesystem>
+#include <env.hpp>
 
 namespace Engine {
 
-class Asset;
-
 class AssetManager {
 private:
-    FHashTable<FString, FPair<FString, FSharedPointer<Asset>>> _AssetTable;
+    std::unordered_map<std::string, std::shared_ptr<void>> _assetTable;
+public:
+    std::filesystem::path resourceFolder;
 public:
     AssetManager() = default;
     ~AssetManager() = default;
-    AssetManager(const AssetManager&) = delete;
-    AssetManager& operator=(const AssetManager&) = delete;
-    AssetManager(AssetManager&&) = delete;
-    AssetManager& operator=(AssetManager&&) = delete;
 public:
     bool Initialize();
     void Destroy();
-    bool LoadAsset(FString);
-    void UnloadAsset();
+    template<typename AssetClass>
+    bool DeserializeAsset(std::filesystem::path, std::shared_ptr<AssetClass>&);
+    template<typename AssetClass>
+    void ReleaseAsset(std::filesystem::path);
 };
 
 }

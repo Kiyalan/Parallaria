@@ -18,6 +18,6 @@ using FReal32 = float;
 using FReal64 = double;
 using FReal = FReal32;
 
-using FByte = unsigned char;
+using FByte = uint8_t;
 
 #endif

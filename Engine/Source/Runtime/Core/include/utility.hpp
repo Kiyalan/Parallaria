@@ -85,4 +85,8 @@ using FSharedPointer = std::shared_ptr<Type>;
 template<typename Type1, typename Type2>
 using FPair = std::pair<Type1, Type2>;
 
+#include <functional>
+template<typename ReturnType, typename... Args>
+using FFunction = std::function<ReturnType(Args...)>;
+
 #endif
