@@ -24,7 +24,7 @@ public:
 public:
 	friend class AssetManager;
 	TextureAsset() = default;
-	~TextureAsset() {delete[] _pixelsArray;}
+	~TextureAsset();
 	/* 
 	Depracated: JSON constructor
 	explicit TextureAsset(FAssetFileContext data);

@@ -23,6 +23,10 @@ TextureAsset::TextureAsset(FAssetFileContext data) :
 }
 */
 
+TextureAsset::~TextureAsset() {
+    stbi_image_free(_pixelsArray);
+}
+
 /**
  * @param path absolute path.
  */

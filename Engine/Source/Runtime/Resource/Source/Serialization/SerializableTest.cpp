@@ -7,7 +7,8 @@
 
 int main(){
     /*
-    TextureAsset Test
+      TextureAsset Test
+
     Engine::TextureAsset tex1;
     if (!tex1.LoadFromFile("D:/GuaGua/Game/Parallaria/Engine/Resource/PatrickStar.jpg"))
         return -1;

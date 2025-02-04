@@ -15,7 +15,7 @@ bool MeshAsset::LoadFromFile(std::filesystem::path path){
     if (extension == ".obj") {
         Assimp::Importer importer;
         // Restriction: Assuming the input winding order is counter-clockwise
-        const aiScene* scene = importer.ReadFile(path.string().c_str(), aiProcess_Triangulate);
+        const aiScene* scene = importer.ReadFile(path.string().c_str(), aiProcess_Triangulate | aiProcess_JoinIdenticalVertices);
         if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
             return PRINT_ERROR("MeshAsset::LoadFromFile: File could not be loaded.", path), false;
         _vertexCount = _indexArraySize = 0;
@@ -34,7 +34,6 @@ bool MeshAsset::LoadFromFile(std::filesystem::path path){
         _indexArray = new FUInt[_indexArraySize];
         for (FUInt i = 0, vertexAttribSum = 0, indexSum = 0; i < scene->mNumMeshes; ++i) {
             const aiMesh* mesh = scene->mMeshes[i];
-            // Restriction: Vertex-based UV ? same points are loaded multiple times
             for (FUInt j = 0; j < mesh->mNumVertices; ++j) {
                 _vertexArray[vertexAttribSum    ] = mesh->mVertices[j].x;
                 _vertexArray[vertexAttribSum + 1] = mesh->mVertices[j].y;
